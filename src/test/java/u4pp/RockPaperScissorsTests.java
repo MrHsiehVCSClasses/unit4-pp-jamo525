@@ -14,7 +14,7 @@ public class RockPaperScissorsTests {
                 Scanner sc = new Scanner(System.in);
                 RockPaperScissors.play(sc);
             });
-            String[] tokens = output.split(System.lineSeparator());
+            String[] tokens = output.split("\n");
             int[] winsLossesDraws = { 0, 0, 0 };
             for (String tk : tokens) {
                 tk = tk.toLowerCase();

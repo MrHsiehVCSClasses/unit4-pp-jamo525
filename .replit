@@ -1,2 +1,3 @@
 run="mvn package"
+#run="bash ./main.sh"
 language="bash"
