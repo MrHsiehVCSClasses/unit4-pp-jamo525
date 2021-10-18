@@ -25,9 +25,9 @@ public class RockPaperScissors {
         int computerRandom;
         int y = 0;
         int x;
+        System.out.println("Welcome to Rock Paper Scissors");
         while (keepPlaying)
         {
-          System.out.println("Welcome to Rock Paper Scissors");
           System.out.println("Would you like to pick (R)ock, (P)aper, (S)cissors, or (A)ny");
           playerInput = sc.nextLine();
           computerRandom = (int) (Math.random()*3);

@@ -15,9 +15,9 @@ public class PalindromeTester {
         String playerPalendrome;
         boolean keepPalendroming = true;
         boolean y = true;
+        System.out.println("Welcome to Palindrome Tester");
         while (keepPalendroming)
         {
-          System.out.println("Welcome to Palindrome Tester");
           System.out.println("Enter a phrase:");
           playerPalendrome = sc.nextLine();
           boolean result = PalindromeTester.isPalindrome(playerPalendrome);
@@ -26,6 +26,7 @@ public class PalindromeTester {
           else
             System.out.println(playerPalendrome + " is not a palindrome");
           
+          y = true;
           while (y)
             {
               System.out.println("Keep Testing? (Y)es or (N)o");
