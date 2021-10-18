@@ -18,7 +18,7 @@ public class PalindromeTester {
         System.out.println("Welcome to Palindrome Tester");
         while (keepPalendroming)
         {
-          System.out.println("Enter a phrase:");
+          System.out.print("Enter a phrase:");
           playerPalendrome = sc.nextLine();
           boolean result = PalindromeTester.isPalindrome(playerPalendrome);
           if (result)
@@ -29,19 +29,19 @@ public class PalindromeTester {
           y = true;
           while (y)
             {
-              System.out.println("Keep Testing? (Y)es or (N)o");
+              System.out.print("Keep Testing? (Y)es or (N)o");
               playerWantToPlay = sc.nextLine();
-              if (playerWantToPlay.equals("N"))
+              if (playerWantToPlay.toUpperCase().equals("N"))
               {
                 keepPalendroming = false;
                 y = false;
               }
-              else if (playerWantToPlay.equals("Y"))
+              else if (playerWantToPlay.toUpperCase().equals("Y"))
               {
                 y = false;
               }
               else
-                System.out.print("Invalid Input, please try again");
+                System.out.println("Invalid Input, please try again");
             }
         }
         

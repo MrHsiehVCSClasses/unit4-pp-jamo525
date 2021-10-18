@@ -66,13 +66,11 @@ class PalindromeTesterTests {
     @Test
     void execute_whenCalled_executesTheLoopsCorrectly() throws Exception {
         int timesExecuted = 6;
-        System.out.println("LSFKDJ:LEKJRPOIWJPTOI");
         withTextFromSystemIn("ask;ljasd", "y", "racecar", "Y", "monkey", "peanut", "n").execute(() -> {
             String output = tapSystemOutNormalized(() -> {
                 Scanner sc = new Scanner(System.in);
                 PalindromeTester.execute(sc);
             });
-            System.out.println(output);
             assertEquals(timesExecuted, output.split("\n").length);
         });
     }

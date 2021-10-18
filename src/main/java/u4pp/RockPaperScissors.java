@@ -6,9 +6,7 @@ package u4pp;
 import java.util.Scanner;
 
 public class RockPaperScissors {
-    static int wins = 0;
-    static int losses = 0;
-    static int ties = 0;
+
     
 
      
@@ -25,10 +23,13 @@ public class RockPaperScissors {
         int computerRandom;
         int y = 0;
         int x;
+        int wins = 0;
+        int losses = 0;
+        int ties = 0;
         System.out.println("Welcome to Rock Paper Scissors");
         while (keepPlaying)
         {
-          System.out.println("Would you like to pick (R)ock, (P)aper, (S)cissors, or (A)ny");
+          System.out.print("Would you like to pick (R)ock, (P)aper, (S)cissors, or (A)ny");
           playerInput = sc.nextLine();
           computerRandom = (int) (Math.random()*3);
           computerOutput = new String [] {"R", "P", "S"}[computerRandom];
@@ -53,15 +54,25 @@ public class RockPaperScissors {
             computerOutput = "Scissors";
           
           if (x == 0)
+          {
              System.out.println("You both picked " + computerOutput + ". Its a tie!");
+             ties+=1;
+          }
           else if (x == 1)
+          {
              System.out.println("You picked " + playerInput + ", and the Computer picked " + computerOutput + ". You win!");
+             wins+=1;
+          }
           else
+          {
              System.out.println("You picked " + playerInput + ", and the Computer picked " + computerOutput + ". You lose!");
-          System.out.println("You have " + wins + " wins and " + " losses and " + ties + " ties");
+             losses+=1;
+          }
+          System.out.println("You have " + wins + " wins and " + losses + " losses and " + ties + " ties");
+          y = 0;
           while (y<1)
           {
-            System.out.println("Would you like to play again? (Y)es or (N)o");
+            System.out.print("Would you like to play again? (Y)es or (N)o");
             playerWantToPlay = sc.nextLine();
             if (playerWantToPlay.toUpperCase().equals("N"))
             {
@@ -90,17 +101,14 @@ public class RockPaperScissors {
         if (computerChoice.equals(playerChoice))
         {
           i = 0;
-          ties+=1;
         }
         else if ((playerChoice.equals("R") && computerChoice.equals("S")) || (playerChoice.equals("P") && computerChoice.equals("R")) || (playerChoice.equals("S") && computerChoice.equals("P")))
         {
           i = 1;
-          wins+=1;
         }
         else
         {
           i = -1;
-          losses+=1;
         }
         return i;
     }
